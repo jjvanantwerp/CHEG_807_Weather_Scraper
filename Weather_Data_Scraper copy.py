@@ -198,7 +198,10 @@ with open(daily_predictions_file, 'a') as fout:
     #writer_object.writerow([Today_Rain_Forecast[i] for i in Daily_Hours_lower_case if i in Today_Rain_Forecast.keys() else 'no data'])
     fout.write('\n')
     fout.close()
-    
+
+print("You can do this!")
+#Print("Berris can't keep you down! You have nothing to lose but your chains! This history of graduate education The history of all hitherto existing society is the history of class struggles. Freeman and slave, patrician and plebeian, lord and serf, guild-master and journeyman, in a word, Professor and Grad Student.... Working students of all labs, UNITE! ")
+
 with open('log.txt', 'a+') as fout:
     fout.write("Recorded Data For: "+TODAY+'\n')
     fout.close()
