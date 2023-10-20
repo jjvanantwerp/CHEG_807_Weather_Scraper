@@ -92,7 +92,7 @@ Today_Rain_Forecast['12 am']=(int((Forecast_SOUP.text.split(City_Name)[-1]).spli
 for hour_tag in Today_Forecast_Tags:
     if "Advertisement" not in hour_tag.text:
         Time=''.join(hour_tag.text.split('m')[0])+"m"
-        if '°' in hour_tag.text and '%' in hour_tag.text.split("°"): 
+        if '°' in hour_tag.text and '%' in hour_tag.text.split("°")[1]: 
             Percipition_Chance=(hour_tag.text.split("°")[1]).split("%")[0][4:]
             Today_Rain_Forecast[Time]=(int(Percipition_Chance)/100)
 
@@ -102,7 +102,7 @@ for hour_tag in Today_Forecast_Tags:
 for hour_tag in Tomorrow_Forecast_Tags:
     if "Advertisement" not in hour_tag.text:
         Time=''.join(hour_tag.text.split('m')[0])+"m"
-        if '°' in hour_tag.text and '%' in hour_tag.text.split("°"): 
+        if '°' in hour_tag.text and '%' in hour_tag.text.split("°")[1]: 
             Percipition_Chance=(hour_tag.text.split("°")[1]).split("%")[0][4:]
             Tomorrow_Rain_Forecast[Time]=(int(Percipition_Chance)/100)
 
