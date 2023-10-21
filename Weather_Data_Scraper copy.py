@@ -202,6 +202,10 @@ with open(daily_predictions_file, 'a') as fout:
 print("You can do this!")
 #Print("Berris can't keep you down! You have nothing to lose but your chains! This history of graduate education The history of all hitherto existing society is the history of class struggles. Freeman and slave, patrician and plebeian, lord and serf, guild-master and journeyman, in a word, Professor and Grad Student.... Working students of all labs, UNITE! ")
 
+if not os.path.isfile('log.txt'):
+    with open('log.txt','w+') as fout:
+        fout.write("LOG OF DATES WITH COLLECTED DATA:")
+
 with open('log.txt', 'a+') as fout:
     fout.write("Recorded Data For: "+TODAY+'\n')
     fout.close()
