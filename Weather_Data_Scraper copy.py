@@ -40,7 +40,7 @@ Days_dict={0:"Monday",
 
 suffix={'1':'st','2':'nd','3':'rd','4':'th','5':'th','6':'th','7':'th','8':'th','9':'th','0':'th'}
 
-#Get formatting for the day before yesterday, yesterday, today, tomorrow, and the day after tomorrow
+##Get formatting for the day before yesterday, yesterday, today, tomorrow, and the day after tomorrow
 if ((str(dt).split("-")[2]).split()[0])[0]=='0':
     TODAY=Days_dict[dt.weekday()]+", "+Months_dict[str(dt).split("-")[1]]+" "+(str(dt).split("-")[2]).split()[0][1]
 else:
@@ -53,8 +53,16 @@ if ((str(dt_after_tomorrow).split("-")[2]).split()[0])[0]=='0':
     DAY_AFTER_TOMORROW=Days_dict[dt_after_tomorrow.weekday()]+", "+Months_dict[str(dt_after_tomorrow).split("-")[1]]+" "+(str(dt_after_tomorrow).split("-")[2]).split()[0][1]
 else:
     DAY_AFTER_TOMORROW=Days_dict[dt_after_tomorrow.weekday()]+", "+Months_dict[str(dt_after_tomorrow).split("-")[1]]+" "+(str(dt_after_tomorrow).split("-")[2]).split()[0]
-YESTERDAY=Days_dict[dt_yesterday.weekday()][0:3]+", "+Months_dict[str(dt_yesterday).split("-")[1]][0:3]+" "+(str(dt_yesterday).split("-")[2]).split()[0]+suffix[(str(dt_yesterday).split("-")[2]).split()[0][-1]]+" 2023"
-DAY_BEFORE_YESTERDAY=Days_dict[dt_before_yesterday.weekday()][0:3]+", "+Months_dict[str(dt_before_yesterday).split("-")[1]][0:3]+" "+(str(dt_before_yesterday).split("-")[2]).split()[0]+suffix[(str(dt_before_yesterday).split("-")[2]).split()[0][-1]]+" 2023"
+
+if ((str(dt_yesterday).split("-")[2]).split()[0])[0]=='0':
+    YESTERDAY=Days_dict[dt_yesterday.weekday()][0:3]+", "+Months_dict[str(dt_yesterday).split("-")[1]][0:3]+" "+(str(dt_yesterday).split("-")[2]).split()[0][1]+suffix[(str(dt_yesterday).split("-")[2]).split()[0][-1]]+" 2023"
+else:
+    YESTERDAY=Days_dict[dt_yesterday.weekday()][0:3]+", "+Months_dict[str(dt_yesterday).split("-")[1]][0:3]+" "+(str(dt_yesterday).split("-")[2]).split()[0]+suffix[(str(dt_yesterday).split("-")[2]).split()[0][-1]]+" 2023"
+
+if ((str(dt_before_yesterday).split("-")[2]).split()[0])[0]=='0':
+    DAY_BEFORE_YESTERDAY=Days_dict[dt_before_yesterday.weekday()][0:3]+", "+Months_dict[str(dt_before_yesterday).split("-")[1]][0:3]+" "+(str(dt_before_yesterday).split("-")[2]).split()[0][1]+suffix[(str(dt_before_yesterday).split("-")[2]).split()[0][-1]]+" 2023"
+else:
+    DAY_BEFORE_YESTERDAY=Days_dict[dt_before_yesterday.weekday()][0:3]+", "+Months_dict[str(dt_before_yesterday).split("-")[1]][0:3]+" "+(str(dt_before_yesterday).split("-")[2]).split()[0]+suffix[(str(dt_before_yesterday).split("-")[2]).split()[0][-1]]+" 2023"
 
 
 '''
